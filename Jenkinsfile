@@ -1,9 +1,9 @@
 pipeline{
     agent any
     environment{
-        CONTAINER_NAME : "express-app-container"
-        IMAGE_NAME : "sahilrajput062004/express-app:v1.0.0"
-        IMAGE_TAG : "latest"
+        CONTAINER_NAME = "express-app-container"
+        IMAGE_NAME = "sahilrajput062004/express-app:"
+        IMAGE_TAG = "v1.0.0"
     }
     stages{
         stage('Clone code'){
@@ -27,7 +27,7 @@ pipeline{
                     passwordVariable : 'DOCKER_PASS'
                 )])
                 {
-                    bat "docker login -u %DOCKER_USER% -p %DOCKER_PASS"
+                    bat "docker login -u %DOCKER_USER% -p %DOCKER_PASS%"
                     bat "docker push %IMAGE_NAME% : %IMAGE_TAG%"
                 }
             }
