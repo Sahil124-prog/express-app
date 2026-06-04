@@ -36,7 +36,7 @@ pipeline{
         stage('Minikube start'){
             steps{
                 echo 'Starting the minikube...'
-                bat 'minikube start'
+                bat 'minikube status || minikube start'
             }
         }
 
