@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         CONTAINER_NAME = "express-app-container"
-        IMAGE_NAME = "sahilrajput062004/express-app:"
+        IMAGE_NAME = "sahilrajput062004/express-app"
         IMAGE_TAG = "v1.0.0"
     }
     stages{
